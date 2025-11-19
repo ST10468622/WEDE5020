@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="myfirststylesheet.css">
+    <title>LUXE LAND - Enquiry for Services & Sponsorship</title> 
+    <meta name="description" content="Submit an enquiry to Luxe Land regarding products, services, volunteering, or sponsorship opportunities.">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="aboutus.html">About Us</a> </li>
+                <li><a href="services.html">Services</a> </li>
+                <li><a href="enquiry.html">Enquiry</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+        <h2>Product and Partnership Enquiry Form</h2>
+    </header>
+
+    <main>
+        <form id="enquiryForm" action="/api/submitEnquiry" method="POST">
+            <p>
+                <label for="name">Your Name:</label>
+                <input type="text" id="name" name="name" required minlength="3">
+            </p>
+
+            <p>
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email" required>
+            </p>
+            
+            <p>
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" placeholder="e.g., 0712345678" required>
+            </p>
+
+            <p>
+                <label for="topic">Enquiry Topic:</label>
+                <select id="topic" name="topic" required>
+                    <option value="">-- Select Topic --</option>
+                    <option value="service">Services Offered</option>
+                    <option value="product">Product Pricing/Availability</option>
+                    <option value="volunteer">Volunteer Opportunity</option>
+                    <option value="sponsor">Sponsorship Information</option>
+                </select>
+            </p>
+
+            <p>
+                <label for="message">Your Enquiry:</label>
+                <textarea id="message" name="message" required minlength="50"></textarea>
+            </p>
+
+            <div id="formError" class="error-message"></div>
+            <div id="formResponse" class="success-message"></div>
+
+            <button type="submit">Send Enquiry</button>
+        </form>
+    </main>
+
+    <footer> LUXELAND &copy;</footer>
+    <script src="js/enquiry.js"></script>
+</body>
+</html>
